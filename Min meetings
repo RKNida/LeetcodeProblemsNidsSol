@@ -1,0 +1,65 @@
+ Minimum halls required for class scheduling
+
+/*Given N lecture timings, with their start time and end time (both inclusive), the task is to find the minimum number of halls required to hold all the classes such that a single hall can be used for only one lecture at a given time. Note that the maximum end time can be 105.
+Examples: 
+ 
+
+Input: lectures[][] = {{0, 5}, {1, 2}, {1, 10}} 
+Output: 3 
+All lectures must be held in different halls because 
+at time instance 1 all lectures are ongoing.
+Input: lectures[][] = {{0, 5}, {1, 2}, {6, 10}} 
+Output: 2 */
+
+// Java implementation of the approach
+//approach can be modified by using set of 24 numbers. and interval incremented if 2 or 3 matches same
+import java.util.*;
+
+class GFG
+{
+
+static int minHalls(int l[][], int n)
+{
+ // HashSet<Integer> s=new HashSet<>();
+  int hall=1;
+  int min=l[0][0];//4
+  int max=l[0][1];//10
+ 
+
+	for(int i=1;i<l.length;i++){
+     if(l[i][0]>=min && l[i][1]<=max){
+       System.out.println("1st"+l[i][0]);
+       hall++;
+    }else if(l[i][0]<min && l[i][1]<=max ){
+                    System.out.println("2nd"+l[i][0]);
+
+	hall++;
+	min=l[i][0];
+     }else if(l[i][0]>=min && l[i][1]>max ){
+              System.out.println("3rd"+l[i][0]);
+
+	hall++;
+	max=l[i][1];
+    }else{
+
+    }
+      
+    }
+	
+	
+	return hall;
+}
+
+// Driver code
+public static void main(String[] args)
+{
+	int lectures[][] = {{ 0, 5 },
+						{ 1, 2 },
+						{ 1, 10 }};
+	int n = lectures.length;
+
+	System.out.println(minHalls(lectures, n));
+}
+}
+
+// This code is contributed by PrinciRaj1992
