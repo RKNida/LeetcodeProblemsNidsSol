@@ -1,4 +1,5 @@
-/*100.Same Tree
+/*Asked in my Google - Question- 2 dices A & B. if A>B then A wins. Find number of times A wins. eg: A= 1,2,3 B=1,2,0 A wins 1 time.
+100.Same Tree
 Given the roots of two binary trees p and q, write a function to check if they are the same or not.
 
 Two binary trees are considered the same if they are structurally identical, and the nodes have the same value.
